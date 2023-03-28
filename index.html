@@ -18,12 +18,51 @@
     </header>
 
     <div id="wrapper">
-        <div id="form-box">
+        <span id="icon-close">
+            <ion-icon name="close"></ion-icon>
+        </span>
+
+        <div class="form-box login">
             <h2>Login</h2>
             <form action="#">
                 <div class="input-box">
-                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
                     <input type="text" required>
+                    <label>Nome</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Senha</label>
+                </div>
+
+                <div id="remember-forgot">
+                    <label><input type="checkbox">Lembre de Mim</label>
+                    <a href="#">Esqueceu a senha?</a>
+                </div>
+
+                <button type="submit" class="btn">Login</button>
+
+                <div id="login-register">
+                    <p>Não tem uma conta?<a href="#" id="register-link"> Registre-se!</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box register">
+            <h2>Criar Conta</h2>
+            <form action="#">
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Nome</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="mail" required>
                     <label>Email</label>
                 </div>
 
@@ -34,14 +73,14 @@
                 </div>
 
                 <div id="remember-forgot">
-                    <label><input type="checkbox">Remember me</label>
+                    <label><input type="checkbox">Lembre de Mim</label>
                     <a href="#">Esqueceu a senha?</a>
                 </div>
 
                 <button type="submit" class="btn">Login</button>
 
                 <div id="login-register">
-                    <p>Não tem uma conta?<a href="#" id="register-link"> Registre-se</a></p>
+                    <p>Não tem uma conta?<a href="#" id="register-link"> Registre-se!</a></p>
                 </div>
             </form>
         </div>
