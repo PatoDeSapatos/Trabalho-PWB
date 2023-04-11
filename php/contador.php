@@ -6,5 +6,4 @@
     fwrite($arq,$contador);
     echo "<div id='contador'><p>Você é o visitante de número ",$contador,"</p></div> ";
     fclose($arq);
-
 ?>

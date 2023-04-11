@@ -1,10 +1,6 @@
 @import url(layout.css);
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     background: url(../images/wallpaper.jpg);
     background-size: cover;
     background-position: bottom;
@@ -20,7 +16,7 @@ body {
     align-items: center;
     padding: 20px 100px;
 
-    background: rgba(0, 0, 0, 0.150);
+    background: var(--plBrown);
     box-shadow: rgba(0, 0, 0, 0.150) 4px 4px 4px 4px;
     z-index: 99;
 }
@@ -85,8 +81,23 @@ nav a:hover:after {
     background: var(--plBrown);
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+    min-height: 100vh;
+    width: 100%;
+}
+
+h1 {
+    color: var(--plYellow);
+    font-size: 10em;
+}
+
 #wrapper {
-    position: relative;
+    position: absolute;
     width: 400px;
     height: 440px;
     background: var(--plYellow);
@@ -99,6 +110,7 @@ nav a:hover:after {
     transition: transform .5s ease,height .2s ease;
     overflow: hidden;
     transform: scale(0);
+    z-index: 1;
 }
 
 #wrapper.active-popup {
@@ -150,6 +162,15 @@ nav a:hover:after {
     border-bottom-left-radius: 20px;
     cursor: pointer;
     z-index: 1;
+}
+
+#bg-filter {
+    position: absolute;
+    height: 100vh;
+    width: 99vw;
+    background-color: rgba(0, 0, 0, 0.288);
+    filter: blur(100px);
+    z-index: -1;
 }
 
 h2 {
@@ -257,3 +278,51 @@ h2 {
     text-decoration: underline;
 }
 
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--plBrown);
+    width: 100%;
+    height: 250px;
+}
+
+footer div {
+    position: relative;
+}
+
+footer div p {
+    color: var(--plYellow);
+    font-size: 3em;
+}
+
+footer div::before {
+    position: absolute;
+    left: -20px;
+    background: var(--plYellow);
+    content: '';
+    width: 3px;
+    height: 100%;
+    border-radius: 5px;
+    transform-origin: center;
+}
+
+footer img {
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+footer a {
+    font-size: 2.7em;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    transition: .5s ease;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    margin: 25px 0 25px 0;
+    color: var(--plYellow);
+}
