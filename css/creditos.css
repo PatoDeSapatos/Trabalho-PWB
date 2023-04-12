@@ -1,1 +1,36 @@
 @import url(./layout.css);
+
+div#creditos {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 100vh;
+    background-color: var(--plBlue);
+    padding: 5em;
+
+}
+
+div#creditos div {
+    display: flex;
+    flex-direction: column;
+    transition: .5s ease;
+    border-radius: 20px;
+    transform: scale(1);
+    z-index: 0;
+}
+
+div#creditos div:hover {
+    background-color: #073852;
+    padding: 5em;
+    transform: scale(1.2);
+    z-index: 1;
+}
+
+div#creditos img.foto-perfil {
+    border-radius: 20px;
+    margin-bottom: 1em;
+}
+
+div#creditos img{
+    width: 9em;
+}
