@@ -24,16 +24,16 @@
 
             <div class="form-box login">
                 <h2>Login</h2>
-                <form action="./php/login.php">
+                <form method="post" action="./php/login.php">
                     <div class="input-box">
                         <span class="icon"><ion-icon name="person"></ion-icon></span>
-                        <input type="text" required>
+                        <input name="user" type="text" required>
                         <label>Nome</label>
                     </div>
 
                     <div class="input-box">
                         <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                        <input type="password" required>
+                        <input name="pass" type="password" required>
                         <label>Senha</label>
                     </div>
 
@@ -42,7 +42,7 @@
                         <a href="#">Esqueceu a senha?</a>
                     </div>
 
-                    <button type="submit" class="btn">Login</button>
+                    <button name="submitLogin" type="submit" class="btn">Login</button>
 
                     <div id="login-register">
                         <p>Não tem uma conta?<a href="#" id="register-link"> Registre-se!</a></p>
