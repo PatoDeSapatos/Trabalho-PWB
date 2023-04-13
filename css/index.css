@@ -93,8 +93,7 @@ h1 {
     position: absolute;
     height: 100vh;
     width: 99vw;
-    background-color: rgba(0, 0, 0, 0.288);
-    filter: blur(100px);
+    background-color: rgba(0, 0, 0, 0.253);
     z-index: -1;
 }
 
@@ -201,6 +200,14 @@ h2 {
 
 #login-register p a:hover {
     text-decoration: underline;
+}
+
+div#contador p {
+    color: #f07f15;
+    font-size: 2.5em;
+    background-color: rgba(0, 0, 0, 0.459);
+    padding: 10px;
+    border-radius: 20px;
 }
 
 footer {

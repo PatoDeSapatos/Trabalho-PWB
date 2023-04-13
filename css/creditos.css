@@ -7,7 +7,6 @@ div#creditos {
     min-height: 100vh;
     background-color: var(--plBlue);
     padding: 5em;
-
 }
 
 div#creditos div {
@@ -21,16 +20,27 @@ div#creditos div {
 
 div#creditos div:hover {
     background-color: #073852;
-    padding: 5em;
+    padding: 3em;
     transform: scale(1.2);
     z-index: 1;
 }
 
 div#creditos img.foto-perfil {
+    height: 9em;
     border-radius: 20px;
     margin-bottom: 1em;
 }
 
+div#creditos div:hover img.foto-perfil {
+    height: 13em;
+}
+
+div#creditos div:hover img {
+    width: 13em;
+}
+
+
 div#creditos img{
+    transition: .5s ease;
     width: 9em;
 }
