@@ -1,1 +1,0 @@
-$conexao = mysqli_connect("http://18.230.6.129/phpMyAdmin","HT3015041","HT3015041","usuarios");
