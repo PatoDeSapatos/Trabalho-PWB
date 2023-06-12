@@ -24,7 +24,7 @@
 
             <div class="form-box login">
                 <h2>Login</h2>
-                <form method="post" action="./index.php">
+                <form method="POST" action="./index.php">
                     <div class="input-box">
                         <span class="icon"><ion-icon name="person"></ion-icon></span>
                         <input name="user" type="text" required>
@@ -42,7 +42,7 @@
                         <a href="#">Esqueceu a senha?</a>
                     </div>
 
-                    <button name="submitLogin" type="submit" class="btn">Login</button>
+                    <button name="submitLogin" type="submit" class="btn" value="login">Login</button>
 
                     <div id="login-register">
                         <p>Não tem uma conta?<a href="#" id="register-link"> Registre-se!</a></p>
@@ -52,23 +52,23 @@
 
             <div class="form-box register">
                 <h2>Criar Conta</h2>
-                <form action="#">
+                <form action="#" method="POST">
 
                     <div class="input-box">
                         <span class="icon"><ion-icon name="person"></ion-icon></span>
-                        <input type="text" required>
+                        <input type="text" name="nome" required>
                         <label>Nome</label>
                     </div>
 
                     <div class="input-box">
                         <span class="icon"><ion-icon name="person"></ion-icon></span>
-                        <input type="mail" required>
+                        <input type="mail" name="email" required>
                         <label>Email</label>
                     </div>
 
                     <div class="input-box">
                         <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                        <input type="password" required>
+                        <input type="password" name="senha" required>
                         <label>Senha</label>
                     </div>
 
@@ -77,7 +77,7 @@
                         <a href="#">Esqueceu a senha?</a>
                     </div>
 
-                    <button type="submit" class="btn">Registrar-se</button>
+                    <button name="submitLogin" value="register" type="submit" class="btn">Registrar-se</button>
 
                     <div id="login-register">
                         <p>Já tem uma conta?<a href="#" id="login-link"> Login!</a></p>
@@ -100,14 +100,6 @@
                 fclose($arq);
 
                 echo "<p>Você é o visitante número: ", $contador,"</p>";
-
-                if(isset($_POST['submitLogin'])){
-                    $user = $_POST['user'];
-                    $pass =$_POST['pass'];
-                    if($user=='teste' && $pass=='123456'){
-                        header("location: ./html/postLogin.html");
-                    }
-                }
             ?>
         </div>
     </main>
@@ -130,3 +122,24 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
+
+<?php
+
+    if(isset($_GET['submitLogin'])){
+        include('./php/credentials.php');
+        
+        if ( $_GET['submitLogin'] == 'login' ) { 
+            // TODO sistema de login com banco de dados
+            $user = $_GET['user'];
+            $pass =$_GET['pass'];
+            if($user=='teste' && $pass=='123456'){
+                header("location: ./html/postLogin.html");
+            }
+        } else {
+            // TODO sistema de login
+        }
+    }
+
+
+
+?>

@@ -15,8 +15,8 @@
     </body>
 </html>
 <?php
-    if(isset($_POST['user'])&& isset($_POST['pass'])){
-        if(isset($_POST['confirmarSenha'])&& isset($_POST['email'])){
+    if(isset($_POST['user']) && isset($_POST['pass'])){
+        if(isset($_POST['confirmarSenha']) && isset($_POST['email'])){
             $nome = $_POST['user'];
             $senha = $_POST['pass'];
             $senhaCf = $_POST['confirmarSenha'];
@@ -25,9 +25,7 @@
             if($senha==$senhaCf) header("location: login.php");
             
             else echo "<div id='aviso'><p>Senhas diferentes</p></div>";
-
-
-            }
         }
+    }
 
 ?>
