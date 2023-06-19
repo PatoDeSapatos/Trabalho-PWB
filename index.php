@@ -43,7 +43,6 @@
                     </div>
                     
                     <button type="submit" class="btn">Login</button>
-                    
 
                     <div class="login-register">
                         <p>Não tem uma conta?<a href="#" id="register-link"> Registre-se!</a></p>
@@ -75,10 +74,9 @@
 
                     <div id="remember-forgot">
                         <label><input name="lembrar" type="checkbox">Lembre de Mim</label>
-                        <a href="#">Esqueceu a senha?</a>
                     </div>
 
-                    <button name="submitLogin" value="register" type="submit" class="btn">Registrar-se</button>
+                    <button type="submit" class="btn">Registrar-se</button>
 
                     <div class="login-register">
                         <p>Já tem uma conta?<a href="#" id="login-link"> Login!</a></p>
@@ -89,7 +87,16 @@
 
         <div id="bg-filter"></div>
 
-        <h1>Museu de Racatinga</h1>
+        <h1>
+            <?php 
+                session_start();
+                if (isset($_SESSION)) {
+                    echo $_SESSION['nome'];
+                } else {
+                    echo 'Museu de Racatinga';
+                }
+            ?>
+        </h1>
 
         <div id="contador">
             <?php
@@ -102,6 +109,10 @@
 
                 echo "<p>Você é o visitante número: ", $contador,"</p>";
             ?>
+        </div>
+
+        <div class="temperatura">
+
         </div>
     </main>
 
