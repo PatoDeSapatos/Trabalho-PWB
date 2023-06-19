@@ -24,7 +24,7 @@
 
             <div class="form-box login">
                 <h2>Login</h2>
-                <form method="post" action="./index.php">
+                <form method="post" action="#">
                     <div class="input-box">
                         <span class="icon"><ion-icon name="person"></ion-icon></span>
                         <input name="user" type="text" required>
@@ -42,9 +42,9 @@
                         <a href="#">Esqueceu a senha?</a>
                     </div>
 
-                    <button name="submitLogin" type="submit" class="btn">Login</button>
+                    <button type="submit" class="btn">Login</button>
 
-                    <div id="login-register">
+                    <div class="login-register">
                         <p>Não tem uma conta?<a href="#" id="register-link"> Registre-se!</a></p>
                     </div>
                 </form>
@@ -52,34 +52,34 @@
 
             <div class="form-box register">
                 <h2>Criar Conta</h2>
-                <form action="#">
+                <form method="post" action="./php/cadastro.php">
 
                     <div class="input-box">
                         <span class="icon"><ion-icon name="person"></ion-icon></span>
-                        <input type="text" required>
+                        <input name="nome" type="text" required>
                         <label>Nome</label>
                     </div>
 
                     <div class="input-box">
                         <span class="icon"><ion-icon name="person"></ion-icon></span>
-                        <input type="mail" required>
+                        <input name="email" type="mail" required>
                         <label>Email</label>
                     </div>
 
                     <div class="input-box">
                         <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                        <input type="password" required>
+                        <input name="senha" type="password" required>
                         <label>Senha</label>
                     </div>
 
                     <div id="remember-forgot">
-                        <label><input type="checkbox">Lembre de Mim</label>
+                        <label><input name="lembrar" type="checkbox">Lembre de Mim</label>
                         <a href="#">Esqueceu a senha?</a>
                     </div>
 
                     <button type="submit" class="btn">Registrar-se</button>
 
-                    <div id="login-register">
+                    <div class="login-register">
                         <p>Já tem uma conta?<a href="#" id="login-link"> Login!</a></p>
                     </div>
                 </form>
@@ -100,14 +100,6 @@
                 fclose($arq);
 
                 echo "<p>Você é o visitante número: ", $contador,"</p>";
-
-                if(isset($_POST['submitLogin'])){
-                    $user = $_POST['user'];
-                    $pass =$_POST['pass'];
-                    if($user=='teste' && $pass=='123456'){
-                        header("location: ./html/postLogin.html");
-                    }
-                }
             ?>
         </div>
     </main>
@@ -115,11 +107,12 @@
     <footer>
 
         <img src="./images/logo_ifsp.png" alt="logo ifsp">
+
+        <p>Política de privacidade | © 2023. Todos os direitos reservados.</p>
         
         <div>
             <p>Navegue: </p>
             <a href="./html/creditos.html">Créditos</a>
-            <a href="./html/contador.html">Contador</a>
         </div>
 
     </footer>
