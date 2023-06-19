@@ -41,8 +41,9 @@
                         <label><input type="checkbox">Lembre de Mim</label>
                         <a href="#">Esqueceu a senha?</a>
                     </div>
-
+                    
                     <button type="submit" class="btn">Login</button>
+                    
 
                     <div class="login-register">
                         <p>Não tem uma conta?<a href="#" id="register-link"> Registre-se!</a></p>
@@ -77,7 +78,7 @@
                         <a href="#">Esqueceu a senha?</a>
                     </div>
 
-                    <button type="submit" class="btn">Registrar-se</button>
+                    <button name="submitLogin" value="register" type="submit" class="btn">Registrar-se</button>
 
                     <div class="login-register">
                         <p>Já tem uma conta?<a href="#" id="login-link"> Login!</a></p>
