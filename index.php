@@ -76,7 +76,7 @@
                         <label><input name="lembrar" type="checkbox">Lembre de Mim</label>
                     </div>
 
-                    <button type="submit" class="btn">Registrar-se</button>
+                    <button type="submit" class="btn">Registrar-se</button> 
 
                     <div class="login-register">
                         <p>Já tem uma conta?<a href="#" id="login-link"> Login!</a></p>
