@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -24,7 +27,7 @@
 
             <div class="form-box login">
                 <h2>Login</h2>
-                <form method="post" action="#">
+                <form method="post" action="php/login.php">
                     <div class="input-box">
                         <span class="icon"><ion-icon name="person"></ion-icon></span>
                         <input name="user" type="text" required>
@@ -45,7 +48,7 @@
                     <button type="submit" class="btn">Login</button>
 
                     <div class="login-register">
-                        <p>Não tem uma conta?<a href="#" id="register-link"> Registre-se!</a></p>
+                        <p>Não tem uma conta?<a href="registro.html" id="register-link"> Registre-se!</a></p>
                     </div>
                 </form>
             </div>
@@ -72,16 +75,9 @@
                         <label>Senha</label>
                     </div>
 
-                    <div id="botao-foto">
-                        <p>Escolher Foto de Perfil</p>
-                        <input type="text" name="foto" id="foto_perfil" style="display:none">
-                    </div>
-
                     <div id="remember-forgot">
                         <label><input name="lembrar" type="checkbox">Lembre de Mim</label>
                     </div>
-
-
 
                     <button type="submit" class="btn">Registrar-se</button> 
 
@@ -92,59 +88,10 @@
             </div>
         </div>
 
-        <div id="foto-popup">
-            <h2 for="foto">Escolha sua foto</h2>
-
-            <div>
-                <label for="cachorro">
-                    <img src="./images/fotos_perfil/cachorro.png" class="profile-pic-img"/>
-                    <input id="cachorro" type="radio" name="foto" value="cachorro.png">
-                </label>
-                
-                <label for="elefante">
-                    <img src="./images/fotos_perfil/elefante.png"/>
-                    <input id="elefante" type="radio" name="foto" value="elefante.png">
-                </label>
-
-                <label for="gato">
-                    <img src="./images/fotos_perfil/gato.png"/>
-                    <input id="gato" type="radio" name="foto" value="gato.png">
-                </label>
-            </div>
-
-            <div>
-                <label for="guaxinim">
-                    <img src="./images/fotos_perfil/guaxinim.png"/>
-                    <input id="guaxinim" type="radio" name="foto" value="guaxinim.png">
-                </label>
-
-                <label for="leao">
-                    <img src="./images/fotos_perfil/leao.png"/>
-                    <input id="leao" type="radio" name="foto" value="leao.png">
-                </label>
-
-                <label for="lontra">
-                    <img src="./images/fotos_perfil/lontra.png"/>
-                    <input id="lontra" type="radio" name="foto" value="lontra.png">
-                </label>
-            </div>
-
-            <div>
-                <button id="confirmProfilePic">Confirmar</button>
-                <button id="cancelProfilePic">Cancelar</button>
-            </div>
-        </div>
-
         <div id="bg-filter"></div>
 
         <h1>
-            <?php 
-                if (isset($_SESSION)) {
-                    echo $_SESSION['nome'];
-                } else {
-                    echo 'Museu de Racatinga';
-                }
-            ?>
+
         </h1>
 
         <div id="contador">
