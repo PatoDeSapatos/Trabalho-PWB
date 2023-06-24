@@ -1,4 +1,5 @@
 <?php
+    session_start();
     if(isset($_POST['user'])&& isset($_POST['pass'])){
         $conexao=mysqli_connect("18.230.6.129","HT301410X","HT301410X","HT301410X");
         $user = $_POST['user'];
@@ -10,7 +11,7 @@
         }
         else{
             $vetor=mysqli_fetch_array($login);
-            $_SESSION["nome"]=$_POST["user"];
+            $_SESSION["nome"]= $user;
             $_SESSION["data"]=$vetor["datac"];
             header ("Location: ../postLogin.php");
             

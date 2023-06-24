@@ -15,6 +15,7 @@ session_start();
         <nav>
             <a href="html/historiaMuseu.html">História do Museu</a>
             <a href="./html/creditos.html">Créditos da Equipe</a>
+            <a href="formComentario.php">Comentários/a>
         </nav>
     </header>
 
@@ -34,7 +35,6 @@ session_start();
             <img id="imagem_Museu2" src="https://rare-gallery.com/uploads/posts/585737-architecture.jpg">
             <p>Representação Fiel ao Museu de Racatinga</p>
         </div>
-
     </main>
     <footer>
 
@@ -43,7 +43,8 @@ session_start();
         <?php 
         setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
         date_default_timezone_set('America/Sao_Paulo');
-        echo "bem vindo".$_SESSION["nome"]; ?>
+        echo "Bem vindo: ".$_SESSION["nome"]."Você é membro desde: ".$_SESSION["data"];
+        ?>
         
         </div>
     </footer>
