@@ -13,10 +13,12 @@
 </head>
 <body>
     <header id="indexHeader">
-        <h1>Logo</h1>
+        <figure>
+            <img src="./images/logo_paulo_agostinho.png" class="logo"/>
+        </figure>
+
         <nav>
-            <a href="html/historiaMuseu.html">História do Museu</a>
-            <a href="./html/creditos.html">Créditos da Equipe</a>
+
             <?php 
                 if ( isset( $_SESSION['logado'] ) ) {
                     echo "
@@ -215,7 +217,13 @@
         
         <div>
             <p>Navegue: </p>
-            <a href="./html/creditos.html">Créditos</a>
+            <a href="./html/creditos.html">Equipe de Desenvolvimento</a>
+            <a href="html/historiaMuseu.html">História do Museu</a>
+            <?php 
+                if( isset( $_SESSION['logado'] ) ) {
+                    echo'<a href="./php/postLogin.php">Pós Login</a>';
+                }
+             ?>
         </div>
 
     </footer>

@@ -1,9 +1,9 @@
 <?php
     include './loadingPage.php';
+    include './conectar.php';
 
     session_start();
     if(isset($_POST['user'])&& isset($_POST['pass'])){
-        $conexao=mysqli_connect("18.230.6.129","HT301410X","HT301410X","HT301410X");
         $user = $_POST['user'];
         $pass =$_POST['pass'];
         $login =mysqli_query($conexao,"select * from usuario where nome='$user' && senha ='$pass'");
@@ -15,8 +15,9 @@
             $vetor=mysqli_fetch_array($login);
             $_SESSION["nome"] = $user;
             $_SESSION["data"] = $vetor["datac"];
+            $_SESSION["foto"] = $vetor["foto"];
             $_SESSION["logado"] = true;
-            header ("Location: ../postLogin.php");
+            header ("Location: ./postLogin.php");
         }
     }
 ?>

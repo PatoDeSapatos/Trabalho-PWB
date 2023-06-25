@@ -14,10 +14,13 @@
 </head>
 <body>
     <header id="header">
-        <h1>Logo</h1>
+        <figure>
+            <img src="../images/logo_paulo_agostinho.png" class="logo"/>
+        </figure>
+
         <nav>
-            <a href="../index.php">Voltar ao início</a>
             <a href="../php/formComentario.php">Comentários</a>
+            <a href="../index.php">Voltar ao início</a>
         </nav>
     </header>
 
