@@ -12,18 +12,18 @@
                     <label>Comentário:</label>
                     <p><textarea name="comentario"></textarea></p>
                 </div>
-                <button type="submit" class="btn">Comentar</button>    
+                <button type="submit" name="submeter" class="btn">Comentar</button> <a href="postLogin.php">Voltar</a>  
         </form>
     </body>
 </html>
 <?php
-    if(isset($_POST['comentario'])){
+    if(isset($_POST['submeter'])){
         include "./conectar.php";
         
         $comentario = $_POST['comentario'];
         $nomeUsuario = $_SESSION['nome'];
-        $idUser = mysqli_query($conexao,"select id from usuario where nome='$nomeUsuario'");
+        $idUser = mysqli_fetch_array(mysqli_query($conexao,"select id from usuario where nome='$nomeUsuario'"));
         $inserir = mysqli_query($conexao,"insert into `comentario`(`idUser`, `comentario`) 
-        VALUES ($idUser,'$comentario')");
+        VALUES ($idUser[0],'$comentario')");
     }
 ?>

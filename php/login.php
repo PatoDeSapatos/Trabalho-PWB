@@ -14,6 +14,7 @@
         else{
             $vetor=mysqli_fetch_array($login);
             $_SESSION["nome"] = $user;
+            $_SESSION["id"] = $vetor[0];
             $_SESSION["data"] = $vetor["datac"];
             $_SESSION["foto"] = $vetor["foto"];
             $_SESSION["logado"] = true;

@@ -2,6 +2,7 @@
     setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
     date_default_timezone_set('America/Sao_Paulo');
     session_start();
+    include "conectar.php";
 ?>
 
 <!DOCTYPE html>
@@ -50,6 +51,21 @@
                 <img id="imagem_Museu2" src="https://rare-gallery.com/uploads/posts/585737-architecture.jpg">
                 <p>Representação Fiel ao Museu de Racatinga</p>
             </div>
+        </section>
+        <section id="sobre-museu">
+            <?php
+                $buscar = mysqli_query($conexao,"select c.id,u.nome, c.comentario FROM comentario c
+                                                INNER JOIN usuario u ON c.idUser = u.id ORDER BY c.idUser;");
+                while($vetor=mysqli_fetch_array($buscar)){
+                    
+                    echo "<form method='POST' action='atualizarComentario.php'><div><p>$vetor[1] : <span>$vetor[2]</span>";
+                    $nome = $_SESSION["nome"];
+                    if($_SESSION["nome"]==$vetor[1]){
+                        echo "<input type='submit' value='Editar' name='$vetor[0]'</div>";
+                    }
+                }
+                echo "</form>";
+            ?>
         </section>
     </main>
 
