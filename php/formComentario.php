@@ -37,7 +37,7 @@
             <a href="../html/historiaMuseu.html">História do Museu</a>
             <?php 
                 if( isset( $_SESSION['logado'] ) ) {
-                    echo'<a href="./php/postLogin.php">Pós Login</a>';
+                    echo'<a href="../php/postLogin.php">Pós Login</a>';
                 }
              ?>
         </div>
