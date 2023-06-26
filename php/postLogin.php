@@ -52,23 +52,24 @@
                 <p>Representação Fiel ao Museu de Racatinga</p>
             </div>
         </section>
-        <section id="sobre-museu">
+        <section>
             <?php
                 $buscar = mysqli_query($conexao,"select c.id,u.nome, c.comentario FROM comentario c
                                                 INNER JOIN usuario u ON c.idUser = u.id ORDER BY c.idUser;");
+                echo "<form id='formAtualizar' method='POST'>";                
                 while($vetor=mysqli_fetch_array($buscar)){
                     
-                    echo "<form method='POST' action='atualizarComentario.php'><div><p>$vetor[1] : <span>$vetor[2]</span>";
-                    $nome = $_SESSION["nome"];
+                    echo "<span id='nome'>$vetor[1]</span> : <span id='comentario'>$vetor[2]</span>";
                     if($_SESSION["nome"]==$vetor[1]){
-                        echo "<input type='submit' value='Editar' name='$vetor[0]'</div>";
+                        echo "<button onclick='mudarComentario()' id='$vetor[0]' name='$vetor[0]'>Editar</button><p></p>";
                     }
+                    else echo "<br>";
                 }
                 echo "</form>";
             ?>
         </section>
     </main>
-
+    <script src="../js/postLogin.js"></script>
     <footer>
         <p>Política de privacidade | © 2023. Todos os direitos reservados</p>
     </footer>
