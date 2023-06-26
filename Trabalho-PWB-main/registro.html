@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2>Criar Conta</h2>
+            <form method="post" action="php/cadastro.php">
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input name="nome" type="text" required>
+                    <label>Nome</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input name="nick" type="text" required>
+                    <label>Nick</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input name="email" type="mail" required>
+                    <label>Email</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input name="senha" type="password" required>
+                    <label>Senha</label>
+                </div>
+                            
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input name="fone" type="text" required>
+                    <label>Telefone</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input name="cidade" type="text" required>
+                    <label>Cidade</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input name="foto" type="file" accept="image/*" required>
+                    <label>Foto</label>
+                </div>
+
+                <div id="remember-forgot">
+                    <label><input name="lembrar" type="checkbox">Lembre de Mim</label>
+                </div>
+                <button type="submit" class="btn">Registrar-se</button> 
+
+                <div class="login-register">
+                    <p>Já tem uma conta?<a href="index.php" id="login-link"> Login!</a></p>
+                </div>
+            </form>
+    </body>
+</html>

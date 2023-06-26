@@ -1,0 +1,126 @@
+@import url(layout.css);
+
+body{
+    background: url(https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,h_1200,q_75,w_1200/v1/clients/dallasites101/Meadows_Museum_Dimitirs_Skliris_S3A9314__628e7830-3643-44a4-b1ab-a16adaff9d80.png);
+    background-size:cover;
+    background: position 0%;;
+}
+
+main {
+    height: 200vh;
+    background: rgba(0, 0, 0, 0.185);
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+}
+
+section#usuario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+section#usuario .background {
+    position: absolute;
+    margin-top: 4.5em;
+    background: #507338f1;
+    width: 95%;
+    height: 85%;
+    z-index: -1;
+}
+
+section#usuario img {
+    height: 300px;
+    width: 300px;
+}
+
+section#usuario h1 {
+    color: var(--plYellow);
+    font-size: 5em;
+}
+
+section#usuario h2 {
+    color: var(--plYellow);
+    font-size: 2em;
+}
+
+section#usuario button {
+    width: 200px;
+    color: aliceblue;
+    background: var(--plBlue);
+    border: 0;
+    border-radius: 15px;
+    padding: 1em;
+    margin: 2em 1em 0 1em;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+section#usuario a {
+    text-decoration: none;
+}
+
+section#sobre-museu {
+    padding: 1em;
+    display: flex;
+    gap: 3em;
+}
+
+#sobre {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height:78%;
+    padding :2em;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--plYellow);
+    box-shadow: rgba(0, 0, 0, 0.150) 4px 4px 4px 4px;
+    z-index: 99;
+}
+
+#sobre h2{
+    margin-bottom:20px;
+    font-size:4.5em;
+}
+
+#sobre h3{
+    font-size:1.8em;
+    margin-bottom:20px;
+}
+
+#sobre p{
+    font-size:1.5em;
+    text-align: center;
+}
+
+#imagem_Museu{
+    height: auto;
+    max-width: 84%;
+    margin-top:30px;
+
+}
+
+#image2{
+    width: 57%;
+    height:78%;
+    padding :2em;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--plYellow);
+    box-shadow: rgba(0, 0, 0, 0.150) 4px 4px 4px 4px;
+    z-index: 99;
+}
+
+#imagem_Museu2{
+    height:auto;
+    max-width:100%;
+    margin-top:20px;
+}
+
+#image2 p{
+    font-size:0.8em;
+}

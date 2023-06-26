@@ -1,0 +1,327 @@
+@import url(layout.css);
+
+header span {
+    padding: 0 .6em 0em 1em;
+    display: flex;
+    align-items: center;
+}
+
+.foto-perfil {
+    margin-left: 10px;
+    width: 2.2em;
+    height: 2.2em;
+}
+
+body {
+    background: url(../images/wallpaper.jpg);
+    background-size: cover;
+    background-position: bottom;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+    min-height: 100vh;
+    width: 100%;
+}
+
+h1 {
+    color: var(--plYellow);
+    font-size: 7em;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#wrapper {
+    position: fixed;
+    width: 400px;
+    height: 440px;
+    background: var(--plYellow);
+    border: 2px solid var(--plBrown);
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .5s ease, height .2s ease, width .2s ease;
+    overflow: hidden;
+    transform: scale(0);
+    z-index: 100;
+}
+
+#wrapper.active-popup {
+    transform: scale(1);
+}
+
+#wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+#wrapper.active {
+    height: 560px;
+    width: 700px;
+}
+
+#wrapper .form-box.login {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+#wrapper.active .form-box.login {
+    transition: none;
+    transform: translateX(-800px);
+}
+
+#wrapper .form-box.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+#wrapper.active .form-box.register {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+#wrapper #icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: var(--plBlue);
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#bg-filter {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.527);
+    z-index: -1;
+}
+
+h2 {
+    font-size: 2em;
+    color: var(--plBlue);
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid var(--plBlue);
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: var(--plBlue);
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: var(--plBlue);
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: var(--plBlue);
+    line-height: 57px;
+}
+
+.inputs-register {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.register-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.remember-forgot {
+    width: 100%;
+    font-size: .9em;
+    color: var(--plBlue);
+    font-weight: 500;
+    margin: -1px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot.register {
+    width: auto;
+}
+
+.remember-forgot label input {
+    accent-color: var(--plBlue);
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: var(--plBlue);
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.btn,
+#foto-popup button,
+div#botao-foto {
+    width: 50%;
+    height: 45px;
+    background: var(--plBlue);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+
+div#botao-foto {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 1em;
+}
+
+.login-register {
+    font-size: .9em;
+    color: var(--plBlue);
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a {
+    color: var(--plBlue);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
+
+/* popup foto de perfil */
+#foto-popup {
+    position: fixed;
+    background-color: azure;
+    padding: 6em;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 20px;
+    gap: 1em;
+    transition: transform .5s ease;
+    transform: scale(0);
+    z-index: 1000;
+}
+
+div#foto-popup.popupActive {
+    transform: scale(1);
+}
+
+#foto-popup img {
+    width: 11em;
+    padding: 1em;
+    border-radius: 15px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+#foto-popup label.active-label img {
+    background-color: #09436379;
+}
+
+#foto-popup input {
+    display: none;
+}
+
+#foto-popup button {
+    width: 200px;
+    margin: 1em 1em 0em 1em;
+}
+
+
+div#contador p {
+    color: #f07f15;
+    font-size: 2.5em;
+    background-color: rgba(0, 0, 0, 0.459);
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+div#temperatura p {
+    color: #2770b4;
+    font-size: 2.0em;
+    background-color: rgba(0, 0, 0, 0.459);
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+div#relogio {
+    position: absolute;
+    right: 10px;
+    top: 5.2em;
+}
+
+div#relogio p {
+    text-align: right;
+    font-size: 1.5em;
+    color: #f07f15;
+}
