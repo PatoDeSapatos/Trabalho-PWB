@@ -203,29 +203,6 @@
                 echo "<p>Você é o visitante número: ", $contador,"</p>";
             ?>
         </div>
-
-        <div class="temperatura">
-            <?php
-            include 'php/OperWeatherMap.php';
-            //Instancia da API
-            $obOpenWeatherMap = new OpenWeatherMap("0c649db9ad4be68b5dd48264132a4944");
-            
-            //Variaveis
-            $lat = -23.5489;
-            $lon = -46.6388;
-            $cidade = 'São Paulo';
-            $uf = 'SP';
-            $dadosClima = $obOpenWeatherMap->consultarClimaAtual($lat,$lon); 
-
-            //Cidade
-            echo '<p>Cidade:'.$cidade.'/'.$uf.'</p>';
-            //Temperatura
-            echo '<p>Temperatura: '.($dadosClima['main']['temp'] ?? 'Desconhecido')."</p>"; 
-            echo '<p>Sensação Térmica: '.($dadosClima['main']['feels_like'] ?? 'Desconhecido')."</p>"; 
-            //Clima
-            echo '<p>Clima: '.($dadosClima['weather'][0]['description'] ?? 'Desconhecido')."</p>"; 
-            ?>
-        </div>
     </main>
 
     <footer>
