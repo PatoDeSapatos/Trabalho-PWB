@@ -50,10 +50,8 @@
                 <img id="imagem_Museu2" src="https://rare-gallery.com/uploads/posts/585737-architecture.jpg">
                 <p>Representação Fiel ao Museu de Racatinga</p>
             </div>
-        </section>
-        <section>
-            <div class="temperatura">
-                <?php
+            <div id="sobre">
+            <?php
                     include "OperWeatherMap.php";
                     //Instancia da API
                     $obOpenWeatherMap = new OpenWeatherMap("0c649db9ad4be68b5dd48264132a4944");
@@ -73,7 +71,10 @@
                     //Clima
                     echo '<p>Clima: '.($dadosClima['weather'][0]['description'] ?? 'Desconhecido')."</p>"; 
                 ?>
-            </div>
+                </div>
+        </section>
+        <section>
+
             <div id="divComentario">
             <?php
                 $buscar = mysqli_query($conexao,"select c.id,u.nome, c.comentario FROM comentario c

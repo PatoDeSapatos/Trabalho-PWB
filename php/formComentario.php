@@ -4,16 +4,45 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/formComentario.css">
     </head>
     <body>
-        <form method="post">
-        <div class="input-box">
-                    <span class="icon"><ion-icon name="person"></ion-icon></span>
-                    <label>Comentário:</label>
-                    <p><textarea name="comentario"></textarea></p>
-                </div>
-                <button type="submit" name="submeter" class="btn">Comentar</button> <a href="postLogin.php">Voltar</a>  
-        </form>
+        <header>
+            <figure><img src="../images/logo_paulo_agostinho.png" class="logo"/></figure>
+        <nav>
+            <a href="postLogin.php">Voltar</a>
+        </nav>
+        </header>
+
+        <main>
+            <div id="wrapper">
+            <form method="post">
+                <h2>Comentar</h2>
+                <textarea name="comentario"></textarea>
+            
+            
+            <button type="submit" name="submeter" class="btn">Comentar</button>   
+            </form>
+            </div>
+        </main>
+        <footer>
+
+        <img src="../images/logo_ifsp.png" alt="logo ifsp">
+
+        <p>Política de privacidade | © 2023. Todos os direitos reservados.</p>
+        
+        <div>
+            <p>Navegue: </p>
+            <a href="../html/creditos.html">Equipe de Desenvolvimento</a>
+            <a href="../html/historiaMuseu.html">História do Museu</a>
+            <?php 
+                if( isset( $_SESSION['logado'] ) ) {
+                    echo'<a href="./php/postLogin.php">Pós Login</a>';
+                }
+             ?>
+        </div>
+
+    </footer>
     </body>
 </html>
 <?php
