@@ -223,7 +223,7 @@
             echo '<p>Temperatura: '.($dadosClima['main']['temp'] ?? 'Desconhecido')."</p>"; 
             echo '<p>Sensação Térmica: '.($dadosClima['main']['feels_like'] ?? 'Desconhecido')."</p>"; 
             //Clima
-            echo '<p>Temperatura: '.($dadosClima['weather'][0]['description'] ?? 'Desconhecido')."</p>"; 
+            echo '<p>Clima: '.($dadosClima['weather'][0]['description'] ?? 'Desconhecido')."</p>"; 
             ?>
         </div>
     </main>
