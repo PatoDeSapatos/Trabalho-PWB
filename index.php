@@ -193,6 +193,7 @@
 
         <div id="contador">
             <?php
+                include "php/conectar.php";
                 $arq = fopen("contador.txt",'r+');
                 $lercontador =fread($arq,100);
                 $contador=floatval($lercontador)+1;
@@ -203,6 +204,41 @@
                 echo "<p>Você é o visitante número: ", $contador,"</p>";
             ?>
         </div>
+        <div id="divComentario">
+            <?php
+                $buscar = mysqli_query($conexao,"select c.id,u.nome, c.comentario FROM comentario c
+                                                INNER JOIN usuario u ON c.idUser = u.id ORDER BY c.idUser;");            
+                while($vetor=mysqli_fetch_array($buscar)){
+                    
+                    echo "<span id='nome'>$vetor[1]</span> : <span id='comentario'>$vetor[2]</span>";
+                    if($_SESSION["nome"]==$vetor[1]){
+                        echo "<button onclick='mudarComentario(this.id)' id='$vetor[0]' name='$vetor[0]'>Editar</button><p></p>";
+                    }
+                    else echo "<br>";
+                }
+            ?>
+            </div>
+        <div>
+            <button id="editar" name="editar">Editar</button>
+            <button id="excluir" name="excluir" >Excluir</button>
+        </div><section>
+        
+        <div>
+            <form method="post" action ="editarComentario.php">
+                <input type="hidden" id="idNovoComentario" name="idNovoComentario" value="">        
+                <textarea name="novoComentario" id="novoComentario"></textarea>
+                <input name="submit" type="submit" value="Editar">
+            </form>
+        </div>
+        
+        <div>
+            <form method="post" action="excluirComentario.php">
+                <input type="hidden" id="idExcluirComentario" name="idExcluirComentario" value="">
+                <button name="cancelar" id="cancelar">Cancelar</button>
+                <input type="submit" name="confirmar" id="confirmar" value="Confirmar">
+            </form>
+        </div>
+        </section>
     </main>
 
     <footer>
