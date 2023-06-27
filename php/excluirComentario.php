@@ -5,4 +5,5 @@
         $id = $_POST['idExcluirComentario'];
         $query = mysqli_query($conexao,"delete from `comentario` where id=$id");
     }
+    header("location:../index.php");
 ?>

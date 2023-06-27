@@ -75,16 +75,6 @@
         </section>
         
     </main>
-    <script>
-        function mudarComentario(id){
-            const value = document.getElementById("idNovoComentario");
-            const valueExcluir =  document.getElementById("idExcluirComentario");
-            value.value = id;
-            valueExcluir.value=id;
-            console.log(value.value);
-            console.log(valueExcluir.value);
-        }
-    </script>
     <footer>
         <p>Política de privacidade | © 2023. Todos os direitos reservados</p>
     </footer>

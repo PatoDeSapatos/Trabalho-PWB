@@ -7,6 +7,6 @@ session_start();
         $comentario = $_POST['novoComentario'];
         $query =  mysqli_query($conexao,"update `comentario` set `comentario`='$comentario' where id = $id");
     }
-
+    header("location: ../index.php");
 ?>
 

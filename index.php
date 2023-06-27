@@ -218,10 +218,11 @@
                 }
             ?>
             </div>
+        
      <section>
         
         <div>
-            <form method="post" action ="editarComentario.php" id="form-comentario">
+            <form method="post" action ="php/editarComentario.php">
                 <input type="hidden" id="idNovoComentario" name="idNovoComentario" value="">        
                 <textarea name="novoComentario" id="novoComentario"></textarea>
                 <input name="submit" type="submit" value="Editar">
@@ -229,12 +230,22 @@
         </div>
         
         <div>
-            <form method="post" action="excluirComentario.php">
+            <form method="post" action="php/excluirComentario.php">
                 <input type="hidden" id="idExcluirComentario" name="idExcluirComentario" value="">
                 <button name="cancelar" id="cancelar">Cancelar</button>
                 <input type="submit" name="confirmar" id="confirmar" value="Confirmar">
             </form>
         </div>
+        <script>
+        function mudarComentario(id){
+            const value = document.getElementById("idNovoComentario");
+            const valueExcluir =  document.getElementById("idExcluirComentario");
+            value.value = id;
+            valueExcluir.value=id;
+            console.log(value.value);
+            console.log(valueExcluir.value);
+        }
+    </script>
         </section>
     </main>
 
