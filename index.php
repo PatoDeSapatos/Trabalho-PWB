@@ -211,20 +211,17 @@
                 while($vetor=mysqli_fetch_array($buscar)){
                     
                     echo "<span id='nome'>$vetor[1]</span> : <span id='comentario'>$vetor[2]</span>";
-                    if($_SESSION["nome"]==$vetor[1]){
+                    if( isset( $_SESSION["nome"] ) && $_SESSION["nome"]==$vetor[1]){
                         echo "<button onclick='mudarComentario(this.id)' id='$vetor[0]' name='$vetor[0]'>Editar</button><p></p>";
                     }
                     else echo "<br>";
                 }
             ?>
             </div>
-        <div>
-            <button id="editar" name="editar">Editar</button>
-            <button id="excluir" name="excluir" >Excluir</button>
-        </div><section>
+     <section>
         
         <div>
-            <form method="post" action ="editarComentario.php">
+            <form method="post" action ="editarComentario.php" id="form-comentario">
                 <input type="hidden" id="idNovoComentario" name="idNovoComentario" value="">        
                 <textarea name="novoComentario" id="novoComentario"></textarea>
                 <input name="submit" type="submit" value="Editar">

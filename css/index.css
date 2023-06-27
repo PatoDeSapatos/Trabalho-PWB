@@ -325,3 +325,14 @@ div#relogio p {
     font-size: 1.5em;
     color: #f07f15;
 }
+
+div#divComentario span {
+    color: #fff;
+}
+#form-comentario {
+    display: none;
+}
+
+.active {
+    display: block;
+}
