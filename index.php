@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/inicial.css">
     <title>Museu</title>
 </head>
 <body>
@@ -204,48 +204,75 @@
                 echo "<p>Você é o visitante número: ", $contador,"</p>";
             ?>
         </div>
-        <div id="divComentario">
+        <div id="comentario">
+            <h3>Comentários</h3>
             <?php
                 $buscar = mysqli_query($conexao,"select c.id,u.nome, c.comentario FROM comentario c
                                                 INNER JOIN usuario u ON c.idUser = u.id ORDER BY c.idUser;");            
                 while($vetor=mysqli_fetch_array($buscar)){
                     
-                    echo "<span id='nome'>$vetor[1]</span> : <span id='comentario'>$vetor[2]</span>";
+                    echo 
+                    "<span>$vetor[1]: $vetor[2]</span>";
                     if( isset( $_SESSION["nome"] ) && $_SESSION["nome"]==$vetor[1]){
-                        echo "<button onclick='mudarComentario(this.id)' id='$vetor[0]' name='$vetor[0]'>Editar</button><p></p>";
+                        echo "<button onclick='mudarComentario(this.id)' id='$vetor[0]' name='$vetor[0]'>Editar</button><button onclick='deletarComentario(this.id)' id='$vetor[0]' name='$vetor[0]'>Excluir</button><br>";
                     }
                     else echo "<br>";
                 }
             ?>
             </div>
         
-     <section>
+        <section>
         
-        <div>
-            <form method="post" action ="php/editarComentario.php">
+            <div id="formEditar">
+                <form method="post" action ="php/editarComentario.php">
+                <p>Insira o novo comentário</p>    
                 <input type="hidden" id="idNovoComentario" name="idNovoComentario" value="">        
-                <textarea name="novoComentario" id="novoComentario"></textarea>
-                <input name="submit" type="submit" value="Editar">
-            </form>
-        </div>
+                    <textarea name="novoComentario" id="novoComentario"></textarea>
+                    <input name="submit" type="submit" value="Editar">
+                </form>
+            </div>
         
-        <div>
-            <form method="post" action="php/excluirComentario.php">
-                <input type="hidden" id="idExcluirComentario" name="idExcluirComentario" value="">
-                <button name="cancelar" id="cancelar">Cancelar</button>
-                <input type="submit" name="confirmar" id="confirmar" value="Confirmar">
-            </form>
-        </div>
-        <script>
-        function mudarComentario(id){
-            const value = document.getElementById("idNovoComentario");
-            const valueExcluir =  document.getElementById("idExcluirComentario");
-            value.value = id;
-            valueExcluir.value=id;
-            console.log(value.value);
-            console.log(valueExcluir.value);
-        }
-    </script>
+            <div id="formExcluir">
+                <form method="post" action="php/excluirComentario.php">
+                    
+                    <input type="hidden" id="idExcluirComentario" name="idExcluirComentario" value="">
+                    <button name="cancelar" id="cancelar">Cancelar</button>
+                    <input type="submit" name="confirmar" id="confirmar" value="Confirmar">
+                </form>
+            </div>
+        
+            <script>
+                function mudarComentario(id){
+                    const value = document.getElementById("idNovoComentario");
+                    
+                    value.value = id;
+                    const div = document.querySelector("div#formEditar");
+                    const divExcluir = document.querySelector("div#formExcluir");
+                    if(div.style.opacity==0){
+                        div.style.opacity = 1;
+                        divExcluir.style.opacity=0;
+                    }
+                    else div.style.opacity =0;
+                    console.log(value.value);
+                    
+                    }
+                function deletarComentario(id){
+                    const div = document.querySelector("div#formExcluir");
+                    const divEditar = document.querySelector("div#formEditar");
+                    const valueExcluir =  document.getElementById("idExcluirComentario");
+                    valueExcluir.value = id;
+                    if(div.style.opacity==0){
+                        div.style.opacity = 1;
+                        divEditar.style.opacity=0;
+                    }
+                    else div.style.opacity =0;
+                    console.log(value.value);
+                    
+                    }
+                
+            </script>
+        
+    
         </section>
     </main>
 

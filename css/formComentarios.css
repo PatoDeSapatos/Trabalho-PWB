@@ -1,0 +1,122 @@
+@import url(layout.css);
+
+header span {
+    padding: 0 .6em 0em 1em;
+    display: flex;
+    align-items: center;
+}
+
+.foto-perfil {
+    margin-left: 10px;
+    width: 2.2em;
+    height: 2.2em;
+}
+
+body {
+    background: url(../images/wallpaper.jpg);
+    background-size: cover;
+    background-position: bottom;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+    min-height: 100vh;
+    width: 100%;
+}
+
+h1 {
+    color: var(--plYellow);
+    font-size: 7em;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#wrapper {
+    
+    width: 400px;
+    height: 440px;
+    background: var(--plYellow);
+    border: 2px solid var(--plBrown);
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+
+
+#bg-filter {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.527);
+    z-index: -1;
+}
+
+h2 {
+    font-size: 2em;
+    color: var(--plBlue);
+    text-align: center;
+    margin-top:-0px;
+}
+div#wrapper input[type=submit]{
+    align-items: center;
+    background-clip: padding-box;
+    background-color: #f07f15;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    margin: 0;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+    margin-top:10px;
+  }
+  
+  div#wrapper input[type=submit],
+  div#wrapper input[type=submit] {
+    background-color: #f07f15;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  }
+  
+  div#wrapper input[type=submit] {
+    transform: translateY(-1px);
+  }
+  
+  div#wrapper input[type=submit] {
+    background-color: #f07f15;
+    box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+    transform: translateY(0);
+  }
+  div#wrapper textarea{
+    margin-top:150px;
+    padding:40px;
+  }
